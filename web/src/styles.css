@@ -61,3 +61,15 @@
     width: 100%;
     height: 100%;
 }
+
+@media (min-width: 600px) {
+    .content_block {    
+        grid-template-columns: auto 1fr;
+        grid-template-rows: auto 1fr auto;
+        grid-template-areas:
+            "navbar navbar"
+            "sidebar content"
+            "footer footer"
+        ;
+    }
+}

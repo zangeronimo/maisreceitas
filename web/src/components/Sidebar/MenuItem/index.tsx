@@ -4,29 +4,29 @@ import './styles.css';
 import { MdExpandMore, MdKeyboardArrowRight } from 'react-icons/md';
 
 interface MenuItemProps {
-    key?: any;
+    keyId?: any;
     title?: string;
     id?: number;
 }
 
-const MenuItem: React.FC<MenuItemProps> = ({ title, id, children, key }) => {
+const MenuItem: React.FC<MenuItemProps> = ({ title, id, children, keyId }) => {
     const [subitem, setSubitem] = useState<number>(0);
 
-    function toggleSubmenu(key: number) {
-        if (checkSubitem(key)) {
+    function toggleSubmenu(keyId: number) {
+        if (checkSubitem(keyId)) {
             setSubitem(0);
         } else {
-            setSubitem(key);
+            setSubitem(keyId);
         }
     }
 
-    function checkSubitem(key: number) {
-        return subitem === key;
+    function checkSubitem(keyId: number) {
+        return subitem === keyId;
     }
 
     if (id) {
         return (
-            <section className="sidebar_block" key={key}>
+            <section className="sidebar_block">
                 <section className="subitem_title" onClick={() => toggleSubmenu(id)}>
                     {checkSubitem(id) ? <MdExpandMore className="icon" /> : <MdKeyboardArrowRight className="icon" />}
                     {title}

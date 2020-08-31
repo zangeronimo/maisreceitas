@@ -14,6 +14,9 @@ function Navbar() {
             <Link className="logo" to="/" title="Ir para a página inicial">
                 <img src={logo} alt="maisreceitas.com.br" />
             </Link>
+            <div className="only_desktop">
+                Algo aqui
+            </div>
             <div className="icon"><MdMenu onClick={setToggled} /></div>
         </div>
     );

@@ -62,13 +62,13 @@ const Sidebar: React.FC<SidebarProps> = (props) => {
 
     return (
         <nav id="sidebar_component" style={sidebarStyles}>
-            {categories.map((item: Category) => {
+            {categories && categories.map((item: Category, index: number) => {
                 return (
-                    <div key={item.id}>
+                    <div key={index}>
                         <MenuItem id={item.id} title={item.name}>
-                            {item.subCategories && item.subCategories.map((sub: any) => {
+                            {item.subCategories && item.subCategories.map((sub: any, index: number) => {
                                 return (
-                                    <Link key={sub.id} className="link" to={`/receitas/${sub.id}/${sub.url}`} title={sub.name} onClick={setToggled}>{sub.name}</Link>
+                                    <Link key={index} className="link" to={`/receitas/${sub.id}/${sub.url}`} title={sub.name} onClick={setToggled}>{sub.name}</Link>
                                 )
                             })}
                         </MenuItem>

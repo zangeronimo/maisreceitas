@@ -21,7 +21,9 @@ function App() {
           <div className="content_block">
             <Navbar />
             <Sidebar />
-            <Routes />
+            <main className="content">
+              <Routes />
+            </main>
             <Footer />
             <ToastContainer
               position="bottom-center"
