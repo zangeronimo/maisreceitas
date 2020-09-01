@@ -60,6 +60,10 @@ const Sidebar: React.FC<SidebarProps> = (props) => {
         width: `${width}`,
     };
 
+    const autoCloseMenu = () => {
+        isMobile() && setToggled()
+    }
+
     return (
         <nav id="sidebar_component" style={sidebarStyles}>
             {categories && categories.map((item: Category, index: number) => {
@@ -68,7 +72,7 @@ const Sidebar: React.FC<SidebarProps> = (props) => {
                         <MenuItem id={item.id} title={item.name}>
                             {item.subCategories && item.subCategories.map((sub: any, index: number) => {
                                 return (
-                                    <Link key={index} className="link" to={`/receitas/${sub.id}/${sub.url}`} title={sub.name} onClick={setToggled}>{sub.name}</Link>
+                                    <Link key={index} className="link" to={`/receitas/${sub.id}/${sub.url}`} title={sub.name} onClick={autoCloseMenu}>{sub.name}</Link>
                                 )
                             })}
                         </MenuItem>

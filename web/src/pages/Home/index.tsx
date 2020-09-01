@@ -1,19 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import './styles.css';
 import Input from '../../components/Input';
-import Featured from '../../components/Featured';
 import api from '../../services/api';
 import { toast } from 'react-toastify';
+import { FeaturedData } from '../Recipes';
+import PhotosList from '../../components/PhotosList';
 const { FacebookProvider, Page } = require('react-facebook');
-
-export interface FeaturedData {
-    id: number;
-    name: string;
-    url: string;
-    rate: number;
-    img: string;
-    subFeatured: number;
-}
 
 function Home() {
     const [featured, setFeatured] = useState<[FeaturedData] | any>([{}]);
@@ -59,11 +51,7 @@ function Home() {
                     </FacebookProvider>
                 </div>
             </header>
-            <div className="featured_list">
-                {featured && featured.map((item: FeaturedData, index: number) => {
-                    return (<Featured key={index} item={item} />);
-                })}
-            </div>
+            <PhotosList list={featured} />
         </div >
     );
 }
