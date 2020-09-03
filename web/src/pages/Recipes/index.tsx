@@ -1,10 +1,13 @@
 import React, { useState, useEffect } from 'react';
 
-import './styles.css';
+import Spinner from '../../components/Spinner';
 import { useParams } from 'react-router-dom';
 import api from '../../services/api';
 import { toast } from 'react-toastify';
 import PhotosList from '../../components/PhotosList';
+import RateStars from '../../components/RateStars';
+
+import './styles.css';
 
 interface PhotoData {
     id: number;
@@ -30,6 +33,7 @@ export interface FeaturedData {
 }
 
 const Recipes: React.FC = () => {
+    const [spinner, setSpinner] = useState(true);
     const [recipe, setRecipe] = useState<RecipeData | null>(null);
     const [featured, setFeatured] = useState<[FeaturedData] | any>([{}]);
     const { subId, recId } = useParams();
@@ -39,6 +43,7 @@ const Recipes: React.FC = () => {
     useEffect(() => {
         setRecipe(null);
         setFeatured([{}]);
+        setSpinner(true);
 
         if (recipeId) {
             // get a list of random recipes
@@ -49,9 +54,11 @@ const Recipes: React.FC = () => {
                     const recipeData: RecipeData = { id: data.codigo, name: data.nome, content: data.html, rate: data.nota.nota, photos: photosData };
 
                     setRecipe(recipeData);
+                    setSpinner(false);
                 })
                 .catch(err => {
                     toast.warning('Servidor fora do ar');
+                    setSpinner(false);
                 })
         } else {
             api.get(`/web/receita/foto/${subFeaturedId}`)
@@ -59,21 +66,34 @@ const Recipes: React.FC = () => {
                     const { data } = result;
                     const featuredList: [FeaturedData] = data.map((item: any) => ({ id: item.codigo, name: item.nome, url: item.url, rate: item.nota, img: item.capa, subFeatured: item.categoria }))
                     setFeatured(featuredList);
+                    setSpinner(false);
                 })
                 .catch(err => {
                     toast.warning('Servidor fora do ar');
+                    setSpinner(false);
                 })
         }
 
         // TODO - check recipeId and return a match recipe or return a list of recipes with subFeaturedId.
     }, [subFeaturedId, recipeId]);
 
+    if (spinner) {
+        return (<Spinner />)
+    }
+
     if (recipe) {
         return (
             <article id="page_recipe">
                 <h1>{recipe.name}</h1>
+                <div className="settings">
+                    <figure>
+                        <img src={`https://webeditorapi.tudolinux.com.br${recipe.photos[0].path}`} alt={recipe.photos[0].name} />
+                    </figure>
+                    <div className="options">
+                        <RateStars rate={recipe.rate} />
+                    </div>
+                </div>
                 <p dangerouslySetInnerHTML={{ __html: recipe.content }}></p>
-                <p>{recipe.rate}</p>
             </article>
         )
     }

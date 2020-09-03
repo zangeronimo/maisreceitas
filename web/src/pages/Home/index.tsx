@@ -5,21 +5,29 @@ import api from '../../services/api';
 import { toast } from 'react-toastify';
 import { FeaturedData } from '../Recipes';
 import PhotosList from '../../components/PhotosList';
+import Spinner from '../../components/Spinner';
+import { useHistory } from 'react-router-dom';
 const { FacebookProvider, Page } = require('react-facebook');
 
 function Home() {
     const [featured, setFeatured] = useState<[FeaturedData] | any>([{}]);
+    const [spinner, setSpinner] = useState(true);
+    const history = useHistory();
 
     useEffect(() => {
+        setSpinner(true);
+
         // get a list of random recipes
         api.get('/web/receita/destaque/6')
             .then((result: any) => {
                 const { data } = result;
                 const featuredList: [FeaturedData] = data.map((item: any) => ({ id: item.codigo, name: item.nome, url: item.url, rate: item.nota, img: item.capa, subFeatured: item.categoria }))
                 setFeatured(featuredList);
+                setSpinner(false);
             })
             .catch(err => {
                 toast.warning('Servidor fora do ar');
+                setSpinner(false);
             })
     }, []);
 
@@ -29,9 +37,14 @@ function Home() {
             clearTimeout(timeout);
         }
         timeout = setTimeout(() => {
-            console.log(value);
+            history.push(`/pesquisar/${value}`)
         }, 500);
     }
+
+    if (spinner) {
+        return (<Spinner />);
+    }
+
     return (
         <div id="home_page">
             <header>

@@ -1,0 +1,56 @@
+#page_recipe {
+    padding: 15px 10px;
+    background: var(--color-background);
+}
+
+#page_recipe b, strong {
+    font-size: 2.1rem;
+}
+
+#page_recipe ul {
+    margin: 15px 0;
+}
+
+#page_recipe h1 {
+    margin-bottom: 15px;
+    font-size: 2.3rem;
+}
+
+#page_recipe .settings {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#page_recipe .settings img {
+    width: 100%;
+    border-radius: 5px;
+}
+
+@media (min-width: 600px) {
+    #page_recipe .settings {
+        float: right;
+        margin: 0 0 10px 10px;
+    }
+
+    #page_recipe .settings img {
+        max-width: 26rem;
+    }
+}
+
+@media (min-width: 700px) {
+    #page_recipe .settings img {
+        float: right;
+        margin: 0 0 10px 10px;
+        max-width: 36rem;
+    }
+}
+
+@media (min-width: 1000px) {
+    #page_recipe .settings img {
+        float: right;
+        margin: 0 0 10px 10px;
+        max-width: 50rem;
+    }
+}
