@@ -8,6 +8,7 @@ import api from '../../services/api';
 import Spinner from '../../components/Spinner';
 import Input from '../../components/Input';
 import PhotosList from '../../components/PhotosList';
+import RecipeList from '../../components/RecipeList';
 
 const Search: React.FC = () => {
     const [featured, setFeatured] = useState<[FeaturedData] | any>([{}]);
@@ -19,7 +20,7 @@ const Search: React.FC = () => {
     useEffect(() => {
         setSpinner(true);
 
-        // get a list of random recipes with photo
+        // get a list of recipes with photo
         api.get(`/web/receita/foto/?nome=${search}`)
             .then((result: any) => {
                 const { data } = result;
@@ -32,7 +33,7 @@ const Search: React.FC = () => {
                 setSpinner(false);
             })
 
-        // get a list of random recipes without photo
+        // get a list of recipes without photo
         api.get(`/web/receita/?nome=${search}`)
             .then((result: any) => {
                 const { data } = result;
@@ -53,7 +54,7 @@ const Search: React.FC = () => {
         }
         timeout = setTimeout(() => {
             value && history.push(`/pesquisar/${value}`)
-        }, 500);
+        }, 1000);
     }
 
     if (spinner) {
@@ -73,10 +74,7 @@ const Search: React.FC = () => {
                 </h3>
             </header>
             <PhotosList list={featured} />
-            <div>
-                <h4>Lista</h4>
-                {featuredList.map((item: any) => item.name)}
-            </div>
+            <RecipeList list={featuredList} />
         </div >
     );
 }

@@ -1,5 +1,5 @@
 {
-  "name": "MaisReceitas",
+  "name": "maisreceitas.com.br",
   "version": "0.0.1",
   "author": "Luciano Zangeronimo <zangeronimo@gmail.com>",
   "license": "MIT",
@@ -14,11 +14,13 @@
     "axios": "^0.19.2",
     "jsonwebtoken": "^8.5.1",
     "react": "^16.13.1",
-    "react-adsense": "^0.1.0",
+    "react-app-polyfill": "^1.0.6",
     "react-dom": "^16.13.1",
     "react-facebook": "^8.1.4",
+    "react-ga": "^3.1.2",
     "react-icons": "^3.10.0",
     "react-router-dom": "^5.2.0",
+    "react-router-hash-link": "^2.0.0",
     "react-scripts": "^3.4.3",
     "react-spinners": "^0.9.0",
     "react-toastify": "^6.0.8",
@@ -48,6 +50,7 @@
   "devDependencies": {
     "@types/jsonwebtoken": "^8.5.0",
     "@types/react-router-dom": "^5.1.5",
+    "@types/react-router-hash-link": "^1.2.1",
     "@types/react-toastify": "^4.1.0"
   }
 }

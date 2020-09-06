@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactGA from 'react-ga';
 
 import Routes from './routes';
 import { BrowserRouter } from 'react-router-dom';
@@ -14,6 +15,9 @@ import Footer from './components/Footer';
 
 
 function App() {
+  ReactGA.initialize("UA-1838057-33");
+  ReactGA.pageview(window.location.pathname + window.location.search);
+
   return (
     <div className="container">
       <BrowserRouter>

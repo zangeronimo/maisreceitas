@@ -13,7 +13,7 @@ interface FeaturedProps {
 const Featured: React.FC<FeaturedProps> = ({ item }) => {
     return (
         <section>
-            <Link to={`/receitas/${item.subFeatured}/${item.id}/${item.url}`}>
+            <Link to={`/receitas/${item.subFeatured}/${item.id}/${item.url}`} title={item.name}>
                 <article className="featured_card">
                     <figure>
                         {item.img && <img src={`https://webeditorapi.tudolinux.com.br${item.img}`} alt={item.name} />}

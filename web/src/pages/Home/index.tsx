@@ -38,7 +38,7 @@ function Home() {
         }
         timeout = setTimeout(() => {
             history.push(`/pesquisar/${value}`)
-        }, 500);
+        }, 1000);
     }
 
     if (spinner) {

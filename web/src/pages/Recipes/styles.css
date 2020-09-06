@@ -23,12 +23,38 @@
     justify-content: space-between;
 }
 
+#page_recipe .settings .options { 
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%; 
+}
+
 #page_recipe .settings img {
     width: 100%;
     border-radius: 5px;
 }
 
+#page_recipe .others {
+    border-top: 1px solid #ccc;
+    margin-top: 2.5rem;
+    padding-top: 0.5rem;
+}
+
+#page_recipe .fb_page {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 10px;
+    background: var(--color-background-fb);
+} 
+
 @media (min-width: 600px) {
+    #page_recipe .fb_page {
+        margin: 0 10px;
+        padding: 0;
+    }
+
     #page_recipe .settings {
         float: right;
         margin: 0 0 10px 10px;
