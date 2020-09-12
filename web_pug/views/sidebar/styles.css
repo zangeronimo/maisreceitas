@@ -1,0 +1,14 @@
+#sidebar_component {
+    position: absolute;
+    top: 125px;
+    z-index: 1;
+    background-color: var(--color-sidebar-background);
+    padding-bottom: 5px;
+}
+
+@media (min-width: 600px) {
+    #sidebar_component {
+        position: relative;
+        top: 0;
+    }
+}

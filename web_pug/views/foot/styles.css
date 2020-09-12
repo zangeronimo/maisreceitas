@@ -1,0 +1,19 @@
+.footer {    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 5px;
+    background-color: var(--color-box-footer-dark);
+    color: var(--color-text-footer-dark);
+}
+
+@media (min-width: 600px) {
+    .footer {
+        flex-direction: row;
+    }
+    .footer p {
+        margin: 15px 10px;
+    }
+}
