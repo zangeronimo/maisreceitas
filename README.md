@@ -1,5 +1,7 @@
-# Código em NextJS
+# MaisReceitas Front-end
 
-### Curso NextJS Diego Fernandes - Rocketseat
+### Nextjs version
 
-Projeto criado durante o curso de NextJS feito pela Rocketseat.
+Hello, here is a nextjs version of maisreceitas.com.br front-end.
+After I finished my GoStack course on Rocketseat I get a small nextjs course
+and I'm very excited to apply and analyze the SEO response.
