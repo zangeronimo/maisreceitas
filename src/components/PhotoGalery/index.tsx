@@ -1,3 +1,4 @@
+import { apiURL } from '@/services/api';
 import { useEffect, useState } from 'react';
 import { Container, Photo, Thumbs, Thumb } from './styles';
 
@@ -24,13 +25,13 @@ export default function PhotoGalery({ galery }: IPhotoGalery) {
 
   return (
     <Container>
-      <Photo src={`${process.env.NEXT_PUBLIC_API_URL}/${currentPhoto.url}`} alt={currentPhoto.nome} />
+      <Photo src={`${apiURL}/${currentPhoto.url}`} alt={currentPhoto.nome} />
       <Thumbs>
         {galery.filter(p => p.codigo !== currentPhoto.codigo).map(photo => (
           <Thumb
             key={photo.codigo}
             onClick={() => setCurrentPhoto(photo)}
-            src={`${process.env.NEXT_PUBLIC_API_URL}/${photo.url}`} alt={photo.nome} />
+            src={`${apiURL}/${photo.url}`} alt={photo.nome} />
         ))}
       </Thumbs>
     </Container>

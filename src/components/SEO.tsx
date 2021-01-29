@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import { apiURL } from '@/services/api';
 
 interface ISEOProps {
     title: string;
@@ -16,7 +17,7 @@ export default function SEO({
     shouldIndexPage = true,
 } : ISEOProps) {
     const pageTitle = `${title} ${!shouldExcludeTitleSuffix ? '| MaisReceitas' : ''}`;
-    const pageImage = image ? `${process.env.NEXT_PUBLIC_API_URL}/${image}` : null;
+    const pageImage = image ? `${apiURL}/${image}` : null;
 
     return (
         <Head>

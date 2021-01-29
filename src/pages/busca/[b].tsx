@@ -1,7 +1,7 @@
 import SEO from "@/components/SEO";
 import Header from "@/components/Header";
 import Sidebar, { getSidebarCategories, ICategories } from "@/components/Sidebar";
-import api from "@/services/api";
+import api, { apiURL } from "@/services/api";
 import { GetStaticPaths, GetStaticProps } from "next"
 import { useRouter } from 'next/router';
 import { Container, RecipeCardList, RecipeCard, RecipeCardTitle } from '@/styles/pages/Categoria';
@@ -52,7 +52,7 @@ export default function Categorias({ recipesWithPhotos, recipes, categories, cat
                   <Link key={recipe.codigo} href={`/receita/${recipe.codigo}/${recipe.url}`}>
                     <a title={`Receita de ${recipe.nome}`}>
                       <RecipeCard>
-                        <img src={`${process.env.NEXT_PUBLIC_API_URL}/${recipe.capa}`} alt={recipe.nome} />
+                        <img src={`${apiURL}/${recipe.capa}`} alt={recipe.nome} />
                         <RecipeCardTitle>{recipe.nome}</RecipeCardTitle>
                         <Stars rate={Number(recipe.nota)} />
                       </RecipeCard>

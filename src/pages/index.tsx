@@ -5,7 +5,7 @@ import { GetStaticProps } from 'next';
 import React from 'react';
 import Footer from '@/components/Footer';
 import { IRecipe } from './categoria/[id]/[url]';
-import api from '@/services/api';
+import api, { apiURL } from '@/services/api';
 import Link from 'next/link';
 import Stars from '@/components/Stars';
 
@@ -31,7 +31,7 @@ export default function Home({ categories, recipes }: IHomeProps) {
                 <Link key={recipe.codigo} href={`/receita/${recipe.codigo}/${recipe.url}`}>
                   <a title={`Receita de ${recipe.nome}`}>
                     <RecipeCard>
-                      <img src={`${process.env.NEXT_PUBLIC_API_URL}/${recipe.capa}`} alt={recipe.nome} />
+                      <img src={`${apiURL}/${recipe.capa}`} alt={recipe.nome} />
                       <RecipeCardTitle>{recipe.nome}</RecipeCardTitle>
                       <Stars rate={Number(recipe.nota)} />
                     </RecipeCard>
