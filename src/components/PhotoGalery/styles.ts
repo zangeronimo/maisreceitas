@@ -15,19 +15,19 @@ export const Photo = styled.img`
   margin-bottom: 1.6rem;
 
   @media (min-width: 500px)  {
-    max-width: 25rem;
+    width: 25rem;
   }
 
   @media (min-width: 700px)  {
-    max-width: 30rem;
+    width: 30rem;
   }
 
   @media (min-width: 800px)  {
-    max-width: 40rem;
+    width: 40rem;
   }
 
   @media (min-width: 900px)  {
-    max-width: 50rem;
+    width: 50rem;
   }
 `;
 

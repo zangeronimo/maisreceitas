@@ -13,8 +13,6 @@ export const Container = styled.div<IContainerProps>`
 
     margin-right: 1.6rem;
     background: #3E3B47;
-
-    @media (min-width: 650px) {
-      width: 25rem;
-    }
+    min-width: 210px;
+    max-width: 250px;
 `;
