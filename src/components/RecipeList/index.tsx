@@ -12,10 +12,11 @@ interface IRecipe {
 }
 
 interface IRecipeListProps {
+  label?: string;
   recipes: IRecipe[];
 }
 
-export default function RecipeList({ recipes }: IRecipeListProps) {
+export default function RecipeList({ recipes, label = 'Todas as receitas da categoria...' }: IRecipeListProps) {
   if (!recipes) {
     return (
       <div>carregando...</div>
@@ -30,7 +31,7 @@ export default function RecipeList({ recipes }: IRecipeListProps) {
 
   return (
     <Container>
-      <SubTitle>Todas as receitas da categoria...</SubTitle>
+      <SubTitle>{label}</SubTitle>
       <Table>
         <thead>
           <TitleLine>

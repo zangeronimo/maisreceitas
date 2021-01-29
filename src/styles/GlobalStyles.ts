@@ -19,6 +19,7 @@ export default createGlobalStyle`
 
     body, input, button, textarea {
         font: 400 1.8rem Roboto, sans-serif;
+        outline: none;
     }
 
     .container {
