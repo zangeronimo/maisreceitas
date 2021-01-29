@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const Container = styled.div`
   h1 {
     margin-top: 2.4rem;
-    font-size: 3.6rem;
+    font-size: 2.4rem;
     color: #666360;
   }
 
@@ -48,7 +48,7 @@ export const RecipeCard = styled.div`
   }
 
   img {
-    width: 300px;
+    width: 100%;
     border-radius: 3%;
   }
 `;

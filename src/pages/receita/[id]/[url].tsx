@@ -4,7 +4,7 @@ import Sidebar, { getSidebarCategories, ICategories } from "@/components/Sidebar
 import api, { apiURL } from "@/services/api";
 import { GetStaticPaths, GetStaticProps } from "next"
 import { useRouter } from 'next/router';
-import { Container, RecipeContent, RecipeCardList, RecipeCard, RecipeCardTitle } from '@/styles/pages/Receita';
+import { Container, Galery, RecipeContent, RecipeCardList, RecipeCard, RecipeCardTitle } from '@/styles/pages/Receita';
 import Stars from "@/components/Stars";
 import Link from "next/link";
 import PhotoGalery, { IPhoto } from "@/components/PhotoGalery";
@@ -57,7 +57,7 @@ export default function Categorias({ recipesWithPhotos, recipe, categories, cate
             <small>{categoryName}</small>
           </h1>
 
-          {recipe.fotos.length > 0 && <PhotoGalery galery={recipe.fotos} />}
+          {recipe.fotos.length > 0 && <Galery><PhotoGalery galery={recipe.fotos} /></Galery>}
           <RecipeContent  dangerouslySetInnerHTML={{ __html: recipe.html }} />
 
           {recipesWithPhotos.length > 0 && (

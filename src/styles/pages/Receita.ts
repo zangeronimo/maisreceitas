@@ -5,7 +5,7 @@ export const Container = styled.div`
     display: flex;
     flex-direction: column;
     margin-top: 2.4rem;
-    font-size: 3.6rem;
+    font-size: 2.4rem;
     color: #666360;
 
     small {
@@ -14,7 +14,7 @@ export const Container = styled.div`
   }
 
   h2 {
-    font-size: 3.2rem;
+    font-size: 2.4rem;
     margin-top: 16px;
     color: #999591;
   };
@@ -33,11 +33,15 @@ export const RecipeContent = styled.article`
   margin: 32px 8px 32px 8px;
   color: #999591;
   line-height: 3.2rem;
-  font-size: 2.4rem;
+  font-size: 1.8rem;
 
   strong {
     color: #F4EDE8;
   }
+`;
+
+export const Galery = styled.div`
+  margin: 16px 0;
 `;
 
 export const RecipeCardList = styled.div`
@@ -71,7 +75,7 @@ export const RecipeCard = styled.div`
   }
 
   img {
-    width: 300px;
+    width: 100%;
     border-radius: 3%;
   }
 `;

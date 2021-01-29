@@ -9,7 +9,7 @@ export const Container = styled.div`
 `;
 
 export const SubTitle = styled.h2`
-  font-size: 3.2rem;
+  font-size: 2rem;
   margin-top: 16px;
   color: #999591;
 `;
@@ -31,7 +31,7 @@ export const TitleLine = styled.tr`
   background: #666360;
   color: #999591;
   height: 3.2rem;
-  font-size: 2.4rem;
+  font-size: 1.8rem;
 `;
 
 export const Line = styled.tr<LineProps>`

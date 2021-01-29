@@ -1,8 +1,9 @@
 
+import { useSidebar } from "@/hooks/Sidebar";
 import getToken from "@/lib/token";
 import api from "@/services/api";
-import { GetServerSideProps } from "next";
 import Link from "next/link";
+import { useEffect } from "react";
 import SidebarItem from "./SidebarItem"
 import { Container } from "./styles"
 
@@ -21,6 +22,13 @@ export interface ISidebarProps {
 }
 
 export default function Sidebar({ categories }: ISidebarProps) {
+  const { showSidebar, setShowSidebar } = useSidebar();
+
+  useEffect(() => {
+    if (window) {
+      setShowSidebar(window.innerWidth > 700);
+    }
+  }, []);
 
   if (!categories) {
     return (
@@ -29,11 +37,11 @@ export default function Sidebar({ categories }: ISidebarProps) {
   }
 
   return(
-    <Container>
+    <Container showSidebar={showSidebar}>
       {categories && categories.map(category => (
         <SidebarItem key={category.codigo} label={category.nome}>
           {category.categorias && category.categorias.map(item => (
-            <Link key={item.codigo} href={`/categoria/${item.codigo}/${item.url}`}><a>{item.nome}</a></Link>
+            <Link key={item.codigo} href={`/categoria/${item.codigo}/${item.url}`}><a onClick={() => setShowSidebar(window.innerWidth > 700)} title={item.nome}>{item.nome}</a></Link>
           ))}
         </SidebarItem>
       ))}
