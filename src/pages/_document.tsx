@@ -3,6 +3,7 @@ import { ServerStyleSheet } from 'styled-components'
 
 export default class MyDocument extends Document {
   static async getInitialProps(ctx: DocumentContext) {
+
     const sheet = new ServerStyleSheet()
     const originalRenderPage = ctx.renderPage
 
@@ -33,7 +34,7 @@ export default class MyDocument extends Document {
       <Html lang="pt">
         <Head>
           <meta charSet="utf-8" />
-
+          <link rel="icon" type="image/x-icon" href="favicon.ico" />
           <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet"></link>
         </Head>
         <body>

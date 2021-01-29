@@ -1,78 +1,63 @@
-
-import { GetServerSideProps } from 'next';
-import Link from 'next/link';
-
-import { Title } from '@/styles/pages/Home';
 import SEO from '@/components/SEO';
+import Header from '@/components/Header';
+import Sidebar, { getSidebarCategories, ICategories } from '@/components/Sidebar';
+import { GetStaticProps } from 'next';
+import React from 'react';
+import Footer from '@/components/Footer';
+import { IRecipe } from './categoria/[id]/[url]';
+import api from '@/services/api';
+import Link from 'next/link';
+import Stars from '@/components/Stars';
 
-interface IProduct {
-  id: string;
-  title: string;
+import { Container, RecipeCardList, RecipeCard, RecipeCardTitle } from '@/styles/pages/Home';
+
+interface IHomeProps {
+  categories?: ICategories[];
+  recipes: IRecipe[];
 }
 
-interface HomeProps {
-  recommendedProducts: IProduct[];
-}
-
-export default function Home({ recommendedProducts }: HomeProps) {
-
-  // Carregamento no client (não indexa nos motores de busca)
-  // useEffect(() => {
-  //   fetch('http://localhost:3333/recommended').then(response => {
-  //     response.json().then(data => {
-  //       setRecommendedProducts(data);
-  //     });
-  //   });
-  // }, []);
-
-  async function handleSum() {
-    // import dinâmico =  so vai carregar quanto utilizar.
-    const math = (await import('../lib/math')).default;
-    alert(math.sum(3, 5));
-  }
+export default function Home({ categories, recipes }: IHomeProps) {
 
   return (
-    <div>
-      <SEO 
-        title="DevCommer, your best ecommerce!" 
-        shouldExcludeTitleSuffix 
-        image="pao.jpg"
-      />
-      <Title>Hello World</Title>
-
-      <section>
-        <Title>Products</Title>
-
-        <ul>
-          {recommendedProducts.map(recommendedProduct => {
-            return (
-              <li key={recommendedProduct.id}>
-                {recommendedProduct.title}
-              </li>
-            )
-          })}
-        </ul>
-      </section>
-
-      <p>
-        <Link href="/catalog/products/camisetas">
-          <a>Link com next</a>
-        </Link>
-      </p>
-
-      <button onClick={handleSum}>Sum!</button>
-    </div>
-  )
+    <Container>
+      <SEO title="MaisReceitas - Os segredos da culinária ao seu alcance!" shouldExcludeTitleSuffix />
+      <Header />
+      <div className="container">
+        <Sidebar categories={categories} />
+        <div>
+          <RecipeCardList>
+            {recipes.map(recipe => {
+              return (
+                <Link key={recipe.codigo} href={`/receita/${recipe.codigo}/${recipe.url}`}>
+                  <a title={`Receita de ${recipe.nome}`}>
+                    <RecipeCard>
+                      <img src={`https://webeditorapi.tudolinux.com.br/${recipe.capa}`} alt={recipe.nome} />
+                      <RecipeCardTitle>{recipe.nome}</RecipeCardTitle>
+                      <Stars rate={Number(recipe.nota)} />
+                    </RecipeCard>
+                  </a>
+                </Link>
+              )
+            })}
+          </RecipeCardList>
+        </div>
+      </div>
+      <Footer />
+    </Container>
+  );
 }
 
-// User somente para dados que precisam estar disponíveis ao motores de buscas
-export const getServerSideProps: GetServerSideProps<HomeProps> = async () => {
-  const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/recommended`);
-  const recommendedProducts = await response.json();
+export const getStaticProps: GetStaticProps<IHomeProps> = async () => {
+  const categories = await getSidebarCategories();
+
+  const result = await api.get("/web/receita/destaque/6");
+  const recipes = result.data;
 
   return {
     props: {
-      recommendedProducts,
+      categories,
+      recipes,
+      revalidate: 3600,
     }
   }
 }

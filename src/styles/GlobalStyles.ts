@@ -1,14 +1,33 @@
 import { createGlobalStyle } from "styled-components";
 
 export default createGlobalStyle`
+    :root {
+        font-size: 60%;
+    }
+
     * {
         margin: 0;
         padding: 0;
+        box-sizing: border-box;
     }
 
     body {
-        background: #121214;
-        color: #fff;
+        background: #312E38;
+        color: #F4EDE8;
         font-family: Roboto, Arial, Helvetica, sans-serif, Arial, Helvetica, sans-serif, sans-serif;
     }
+
+    body, input, button, textarea {
+        font: 400 1.8rem Roboto, sans-serif;
+    }
+
+    .container {
+        display: flex;
+    }
+
+@media (min-width: 700px) {
+    :root {
+        font-size: 62.5%
+    }
+}
 `;

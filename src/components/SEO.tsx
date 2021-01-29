@@ -15,7 +15,7 @@ export default function SEO({
     shouldExcludeTitleSuffix = false,
     shouldIndexPage = true,
 } : ISEOProps) {
-    const pageTitle = `${title} ${!shouldExcludeTitleSuffix ? '| DevCommerce' : ''}`;
+    const pageTitle = `${title} ${!shouldExcludeTitleSuffix ? '| MaisReceitas' : ''}`;
     const pageImage = image ? `${process.env.NEXT_PUBLIC_SITE_URL}/${image}` : null;
 
     return (
@@ -30,8 +30,8 @@ export default function SEO({
             <meta httpEquiv="x-ua-compatible" content="IE=edge,chrome=1" />
             <meta name="MobileOptimized" content="320" />
             <meta name="HandheldFriendly" content="True" />
-            <meta name="theme-color" content="#121214" />
-            <meta name="msapplication-TileColor" content="#121214" />
+            <meta name="theme-color" content="#312E38" />
+            <meta name="msapplication-TileColor" content="#312E38" />
             <meta name="referrer" content="no-referrer-when-downgrade" />
             <meta name="google" content="notranslate" />
 
@@ -49,8 +49,8 @@ export default function SEO({
 
             <meta name="twitter:title" content={pageTitle} />
             <meta name="twitter:card" content="summary_large_image" />
-            <meta name="twitter:site" content="@tudolinux" />
-            <meta name="twitter:creator" content="@tudolinux" />
+            <meta name="twitter:site" content="@MaisReceitas" />
+            <meta name="twitter:creator" content="@MaisReceitas" />
             <meta name="twitter:image" content={pageImage} />
             <meta name="twitter:image:src" content={pageImage} />
             <meta name="twitter:image:alt" content="Thumbnail" />
