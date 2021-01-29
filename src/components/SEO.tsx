@@ -16,12 +16,12 @@ export default function SEO({
     shouldIndexPage = true,
 } : ISEOProps) {
     const pageTitle = `${title} ${!shouldExcludeTitleSuffix ? '| MaisReceitas' : ''}`;
-    const pageImage = image ? `${process.env.NEXT_PUBLIC_SITE_URL}/${image}` : null;
+    const pageImage = image ? `${process.env.NEXT_PUBLIC_API_URL}/${image}` : null;
 
     return (
         <Head>
             <title>{pageTitle}</title>
-            
+
             {description && <meta name="descrition" content={description} /> }
             {pageImage && <meta name="image" content={pageImage} /> }
 

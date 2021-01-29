@@ -24,13 +24,13 @@ export default function PhotoGalery({ galery }: IPhotoGalery) {
 
   return (
     <Container>
-      <Photo src={`https://webeditorapi.tudolinux.com.br/${currentPhoto.url}`} alt={currentPhoto.nome} />
+      <Photo src={`${process.env.NEXT_PUBLIC_API_URL}/${currentPhoto.url}`} alt={currentPhoto.nome} />
       <Thumbs>
         {galery.filter(p => p.codigo !== currentPhoto.codigo).map(photo => (
           <Thumb
             key={photo.codigo}
             onClick={() => setCurrentPhoto(photo)}
-            src={`https://webeditorapi.tudolinux.com.br/${photo.url}`} alt={photo.nome} />
+            src={`${process.env.NEXT_PUBLIC_API_URL}/${photo.url}`} alt={photo.nome} />
         ))}
       </Thumbs>
     </Container>

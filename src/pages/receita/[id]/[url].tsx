@@ -45,6 +45,7 @@ export default function Categorias({ recipesWithPhotos, recipe, categories, cate
       <SEO
         title={`Receitas de ${recipe.nome}`}
         description={`Curta e aproveite esta deliciosa receita de ${recipe.nome}, isso e muito mais você encontra aqui, confira.`}
+        image={ recipe.fotos.length > 0 ? recipe.fotos[0].url : null }
       />
       <Header />
       <div className="container">
@@ -68,7 +69,7 @@ export default function Categorias({ recipesWithPhotos, recipe, categories, cate
                   <Link key={recipe.codigo} href={`/receita/${recipe.codigo}/${recipe.url}`}>
                     <a title={`Receita de ${recipe.nome}`}>
                       <RecipeCard>
-                        <img src={`https://webeditorapi.tudolinux.com.br/${recipe.capa}`} alt={recipe.nome} />
+                        <img src={`${process.env.NEXT_PUBLIC_API_URL}/${recipe.capa}`} alt={recipe.nome} />
                         <RecipeCardTitle>{recipe.nome}</RecipeCardTitle>
                         <Stars rate={Number(recipe.nota)} />
                       </RecipeCard>

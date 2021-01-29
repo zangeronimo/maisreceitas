@@ -32,20 +32,30 @@ export default function RecipeList({ recipes }: IRecipeListProps) {
     <Container>
       <SubTitle>Todas as receitas da categoria...</SubTitle>
       <Table>
-        <TitleLine>
-          <th>Receita</th>
-          <th>Nota</th>
-        </TitleLine>
-        { recipes && recipes.map((recipe, index) => (
-          <Line key={recipe.codigo} detach={!!(index%2)} onClick={() => handleTableClick(recipe)}>
-            <td>
-              <Link href={`/receita/${recipe.codigo}/${recipe.url}`}>
-                <a title={`Receita de ${recipe.nome}`}>{recipe.nome}</a>
-              </Link>
-            </td>
-            <td><Stars rate={recipe.nota} /></td>
-          </Line>
-        ))}
+        <thead>
+          <TitleLine>
+            <th>Receita</th>
+            <th>Nota</th>
+          </TitleLine>
+        </thead>
+          <tbody>
+          { recipes && recipes.map((recipe, index) => (
+            <Line key={recipe.codigo} detach={!!(index%2)} onClick={() => handleTableClick(recipe)}>
+              <td>
+                <Link href={`/receita/${recipe.codigo}/${recipe.url}`}>
+                  <a title={`Receita de ${recipe.nome}`}>{recipe.nome}</a>
+                </Link>
+              </td>
+              <td><Stars rate={recipe.nota} /></td>
+            </Line>
+          ))}
+          </tbody>
+          <tfoot>
+            <tr>
+              <td></td>
+              <td></td>
+            </tr>
+          </tfoot>
       </Table>
     </Container>
   );

@@ -31,7 +31,7 @@ export default function Home({ categories, recipes }: IHomeProps) {
                 <Link key={recipe.codigo} href={`/receita/${recipe.codigo}/${recipe.url}`}>
                   <a title={`Receita de ${recipe.nome}`}>
                     <RecipeCard>
-                      <img src={`https://webeditorapi.tudolinux.com.br/${recipe.capa}`} alt={recipe.nome} />
+                      <img src={`${process.env.NEXT_PUBLIC_API_URL}/${recipe.capa}`} alt={recipe.nome} />
                       <RecipeCardTitle>{recipe.nome}</RecipeCardTitle>
                       <Stars rate={Number(recipe.nota)} />
                     </RecipeCard>
