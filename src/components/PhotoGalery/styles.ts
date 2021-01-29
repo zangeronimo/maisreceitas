@@ -1,17 +1,34 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-  margin-top: -7.2rem;
+  //margin-top: -7.2rem;
   float: right;
   display: flex;
   flex-direction: column;
+  align-items: center;
 `;
 
 export const Photo = styled.img`
-  width: 50rem;
+  width: 32rem;
   border-radius: 3%;
   margin-left: 1.6rem;
-  margin-bottom: 1.6rem
+  margin-bottom: 1.6rem;
+
+  @media (min-width: 500px)  {
+    max-width: 25rem;
+  }
+
+  @media (min-width: 700px)  {
+    max-width: 30rem;
+  }
+
+  @media (min-width: 800px)  {
+    max-width: 40rem;
+  }
+
+  @media (min-width: 900px)  {
+    max-width: 50rem;
+  }
 `;
 
 export const Thumbs = styled.div`

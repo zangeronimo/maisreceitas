@@ -1,3 +1,4 @@
+import Hooks from '@/hooks';
 import GlobalStyles from '@/styles/GlobalStyles';
 import { Router } from 'next/router';
 import * as gtag from '../lib/gtag'
@@ -8,7 +9,7 @@ function MyApp({ Component, pageProps }) {
   return (
     <>
       <GlobalStyles />
-      <Component {...pageProps} />
+      <Hooks><Component {...pageProps} /></Hooks>
     </>
   )
 }

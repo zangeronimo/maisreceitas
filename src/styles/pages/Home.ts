@@ -40,7 +40,7 @@ transition: background-color 0.2s;
 }
 
 img {
-  width: 300px;
+  width: 100%;
   border-radius: 3%;
 }
 `;
