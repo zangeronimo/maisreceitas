@@ -1,7 +1,9 @@
 import axios from 'axios';
 
+const apiURL = 'https://webeditorapi.tudolinux.com.br';
+
 const api = axios.create({
-    baseURL: process.env.NEXT_PUBLIC_API_URL,
+    baseURL: apiURL,
 })
 
 export default api;
