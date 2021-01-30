@@ -10,7 +10,7 @@ import Link from 'next/link';
 import Stars from '@/components/Stars';
 
 import { Container, RecipeCardList, RecipeCard, RecipeCardTitle } from '@/styles/pages/Home';
-import Adsense250x250 from '@/components/Adsense250x250';
+import GoogleAdsense from 'react-adsense-google';
 
 interface IHomeProps {
   categories?: ICategories[];
@@ -25,7 +25,10 @@ export default function Home({ categories, recipes }: IHomeProps) {
       <div className="container">
         <div>
           <Sidebar categories={categories} />
-          <Adsense250x250 />
+          <GoogleAdsense
+            adClient='ca-pub-0338836461603030'
+            adSlot='3167829446'
+          />
         </div>
 
         <div>
