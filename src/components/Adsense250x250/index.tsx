@@ -1,8 +1,18 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 import { Container } from './styles';
 
 export default function Adsense250x250() {
+  let adsbygoogle: any;
+
+  useEffect(() => {
+    try {
+      (adsbygoogle = window.adsbygoogle || []).push({});
+    } catch(err) {
+      console.log(err);
+    }
+  }, [adsbygoogle]);
+
   return (
     <Container>
       <ins
