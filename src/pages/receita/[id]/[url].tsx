@@ -9,6 +9,7 @@ import Stars from "@/components/Stars";
 import Link from "next/link";
 import PhotoGalery, { IPhoto } from "@/components/PhotoGalery";
 import Footer from "@/components/Footer";
+import { useEffect } from "react";
 
 interface IRecipe {
     codigo: number;

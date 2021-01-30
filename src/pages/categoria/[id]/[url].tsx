@@ -9,6 +9,7 @@ import Stars from "@/components/Stars";
 import RecipeList from "@/components/RecipeList";
 import Link from "next/link";
 import Footer from "@/components/Footer";
+import { useEffect } from "react";
 
 export interface IRecipe {
     codigo: number;
