@@ -41,10 +41,12 @@ export const RecipeContent = styled.article`
 `;
 
 export const Galery = styled.div`
+  float: right;
   margin: 16px 0;
 `;
 
 export const Adsense = styled.div`
+  float: right;
   margin: 16px 0;
   max-width: 300px;
 `;

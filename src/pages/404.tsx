@@ -7,6 +7,7 @@ import { GetStaticProps } from "next";
 import '@/styles/pages/NotFound';
 import { Container } from "@/styles/pages/NotFound";
 import { FaExclamationTriangle } from "react-icons/fa";
+import Adsense250x250 from "@/components/Adsense250x250";
 
 interface INotFoundProps {
   categories?: ICategories[];
@@ -15,7 +16,7 @@ interface INotFoundProps {
 export default function NotFound({ categories }: INotFoundProps) {
   return  (
     <Container>
-      <SEO title="Página não encontrada ou não disponível no momento" />
+      <SEO title="Página não encontrada ou não disponível no momento" url="404" />
       <Header />
       <div className="container">
         <Sidebar categories={categories} />

@@ -3,6 +3,7 @@ import { apiURL } from '@/services/api';
 
 interface ISEOProps {
     title: string;
+    url: string;
     description?: string;
     image?: string;
     shouldExcludeTitleSuffix?: boolean;
@@ -11,6 +12,7 @@ interface ISEOProps {
 
 export default function SEO({
     title,
+    url,
     description,
     image,
     shouldExcludeTitleSuffix = false,
@@ -18,10 +20,13 @@ export default function SEO({
 } : ISEOProps) {
     const pageTitle = `${title} ${!shouldExcludeTitleSuffix ? '| MaisReceitas' : ''}`;
     const pageImage = image ? `${apiURL}/${image}` : null;
+    const fullURL = `https://www.maisreceitas.com.br/${url}`;
 
     return (
         <Head>
             <title>{pageTitle}</title>
+
+            <link rel="canonical" href={fullURL} />
 
             {description && <meta name="descrition" content={description} /> }
             {pageImage && <meta name="image" content={pageImage} /> }

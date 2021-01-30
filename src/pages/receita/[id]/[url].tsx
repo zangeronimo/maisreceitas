@@ -4,12 +4,12 @@ import Sidebar, { getSidebarCategories, ICategories } from "@/components/Sidebar
 import api, { apiURL } from "@/services/api";
 import { GetStaticPaths, GetStaticProps } from "next"
 import { useRouter } from 'next/router';
-import { Container, Galery, RecipeContent, RecipeCardList, RecipeCard, RecipeCardTitle, Adsense } from '@/styles/pages/Receita';
+import { Container, Galery, RecipeContent, RecipeCardList, RecipeCard, RecipeCardTitle } from '@/styles/pages/Receita';
 import Stars from "@/components/Stars";
 import Link from "next/link";
 import PhotoGalery, { IPhoto } from "@/components/PhotoGalery";
 import Footer from "@/components/Footer";
-import AdsenseArticle from "@/components/AdsenseArticle";
+import Adsense250x250 from "@/components/Adsense250x250";
 
 interface IRecipe {
     codigo: number;
@@ -29,12 +29,13 @@ interface IRecipe {
 
 interface CategoriesProps {
     categoryName: string;
+    fullURL: string;
     recipesWithPhotos: IRecipe[];
     recipe: IRecipe;
     categories: ICategories[]
 }
 
-export default function Categorias({ recipesWithPhotos, recipe, categories, categoryName }: CategoriesProps) {
+export default function Categorias({ recipesWithPhotos, recipe, categories, categoryName, fullURL }: CategoriesProps) {
   const router = useRouter();
 
   if (router.isFallback || !recipe) {
@@ -45,6 +46,7 @@ export default function Categorias({ recipesWithPhotos, recipe, categories, cate
     <Container>
       <SEO
         title={`Receitas de ${recipe.nome}`}
+        url={fullURL}
         description={`Curta e aproveite esta deliciosa receita de ${recipe.nome}, isso e muito mais você encontra aqui, confira.`}
         image={ recipe.fotos.length > 0 ? recipe.fotos[0].url : null }
       />
@@ -59,8 +61,7 @@ export default function Categorias({ recipesWithPhotos, recipe, categories, cate
           </h1>
 
 
-            {recipe.fotos.length > 0 && <Galery><PhotoGalery galery={recipe.fotos} /></Galery>}
-            <Adsense><AdsenseArticle /></Adsense>
+          {recipe.fotos.length > 0 && <Galery><PhotoGalery galery={recipe.fotos} /></Galery>}
 
           <RecipeContent  dangerouslySetInnerHTML={{ __html: recipe.html }} />
 
@@ -99,7 +100,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 };
 
 export const getStaticProps: GetStaticProps<CategoriesProps> = async (context) => {
-  const { id } = context.params;
+  const { id, url } = context.params;
 
   const categories = await getSidebarCategories();
 
@@ -126,6 +127,7 @@ export const getStaticProps: GetStaticProps<CategoriesProps> = async (context) =
   return {
     props: {
       categoryName,
+      fullURL: `receita/${id}/${url}`,
       recipesWithPhotos,
       recipe,
       categories,

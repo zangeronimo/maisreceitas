@@ -10,6 +10,7 @@ import Link from 'next/link';
 import Stars from '@/components/Stars';
 
 import { Container, RecipeCardList, RecipeCard, RecipeCardTitle } from '@/styles/pages/Home';
+import Adsense250x250 from '@/components/Adsense250x250';
 
 interface IHomeProps {
   categories?: ICategories[];
@@ -17,10 +18,9 @@ interface IHomeProps {
 }
 
 export default function Home({ categories, recipes }: IHomeProps) {
-
   return (
     <Container>
-      <SEO title="MaisReceitas - Os segredos da culinária ao seu alcance!" shouldExcludeTitleSuffix />
+      <SEO title="MaisReceitas - Os segredos da culinária ao seu alcance!" shouldExcludeTitleSuffix url="" />
       <Header />
       <div className="container">
         <Sidebar categories={categories} />
