@@ -18,7 +18,7 @@ export const Container = styled.div`
 
     h2 {
       font-size: 2rem;
-      margin-top: 2.4rem;
+      margin: 2.4rem;
       color: #999591;
       align-items: center;
     };
@@ -30,16 +30,19 @@ export const Container = styled.div`
 `;
 
 export const Adsense = styled.div`
-  margin: 0 3.2rem;
-  width: 300px;
-  height: 250px;
+  margin: 3.2rem 0;
   flex: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
 
   @media (min-width: 600px) {
-    flex-direction: row;
-    justify-content: space-around;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @media (min-width: 1080px) {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
   }
 `;
