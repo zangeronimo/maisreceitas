@@ -18,7 +18,7 @@ export const Container = styled.div`
 
     h2 {
       font-size: 2rem;
-      margin-top: 2.4rem;
+      margin: 2.4rem;
       color: #999591;
       align-items: center;
     };
