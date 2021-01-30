@@ -31,15 +31,13 @@ export const Container = styled.div`
 
 export const Adsense = styled.div`
   margin: 3.2rem 0;
-  width: 300px;
-  height: 250px;
   flex: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
 
   @media (min-width: 600px) {
-    flex-direction: row;
-    justify-content: space-around;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
   }
 `;
