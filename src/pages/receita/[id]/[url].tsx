@@ -50,10 +50,7 @@ export default function Categorias({ recipesWithPhotos, recipe, categories, cate
       />
       <Header />
       <div className="container">
-        <div>
-          <Sidebar categories={categories} />
-          <Adsense250x250 />
-        </div>
+        <Sidebar categories={categories} />
         <div className="content">
           <h1>
             {recipe.nome}

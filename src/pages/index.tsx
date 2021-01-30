@@ -23,11 +23,7 @@ export default function Home({ categories, recipes }: IHomeProps) {
       <SEO title="MaisReceitas - Os segredos da culinária ao seu alcance!" shouldExcludeTitleSuffix />
       <Header />
       <div className="container">
-        <div>
-          <Sidebar categories={categories} />
-          <Adsense250x250 />
-        </div>
-
+        <Sidebar categories={categories} />
         <div>
           <RecipeCardList>
             {recipes.map(recipe => {

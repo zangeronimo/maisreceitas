@@ -19,10 +19,7 @@ export default function NotFound({ categories }: INotFoundProps) {
       <SEO title="Página não encontrada ou não disponível no momento" />
       <Header />
       <div className="container">
-        <div>
-          <Sidebar categories={categories} />
-          <Adsense250x250 />
-        </div>
+        <Sidebar categories={categories} />
         <div>
           <h1><FaExclamationTriangle /> Página não encontrada ou não disponível no momento</h1>
           <h2>Atualizamos nosso site</h2>

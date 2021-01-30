@@ -4,6 +4,7 @@ import getToken from "@/lib/token";
 import api from "@/services/api";
 import Link from "next/link";
 import { useEffect } from "react";
+import Adsense250x250 from "../Adsense250x250";
 import SidebarItem from "./SidebarItem"
 import { Container } from "./styles"
 
@@ -45,6 +46,7 @@ export default function Sidebar({ categories }: ISidebarProps) {
           ))}
         </SidebarItem>
       ))}
+      <Adsense250x250 />
     </Container>
   )
 }
