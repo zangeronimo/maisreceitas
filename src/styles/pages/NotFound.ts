@@ -22,14 +22,14 @@ export const Container = styled.div`
 `;
 
 export const Adsense = styled.div`
-  margin-top: 0.8rem;
+  margin: 0 0.8rem;
   flex: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
 
   @media (min-width: 600px) {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    flex-direction: row;
+    justify-content: space-around;
   }
 `;
