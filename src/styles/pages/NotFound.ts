@@ -20,3 +20,16 @@ export const Container = styled.div`
       color: #999591;
     };
 `;
+
+export const Adsense = styled.div`
+  margin-top: 0.8rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @media (min-width: 600px) {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+`;

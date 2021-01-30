@@ -4,8 +4,7 @@ import SEO from "@/components/SEO";
 import Sidebar, { getSidebarCategories, ICategories } from "@/components/Sidebar";
 import { GetStaticProps } from "next";
 
-import '@/styles/pages/NotFound';
-import { Container } from "@/styles/pages/NotFound";
+import { Container, Adsense } from "@/styles/pages/NotFound";
 import { FaExclamationTriangle } from "react-icons/fa";
 import Adsense250x250 from "@/components/Adsense250x250";
 
@@ -26,6 +25,12 @@ export default function NotFound({ categories }: INotFoundProps) {
           <div>
             Realizamos uma atualização completa em nosso site para melhorar sua experiência, lamentamos o transtorno, realize uma busca para encontrar o que deseja.
           </div>
+
+          <Adsense>
+            <Adsense250x250 />
+            <Adsense250x250 />
+            <Adsense250x250 />
+          </Adsense>
         </div>
       </div>
       <Footer />
