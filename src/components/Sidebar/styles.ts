@@ -16,9 +16,3 @@ export const Container = styled.div<IContainerProps>`
     background: #3E3B47;
     width: 250px;
 `;
-
-export const Adsense = styled.div`
-  margin-top: 16px;
-  width: 250px;
-  height: 250px;
-`;

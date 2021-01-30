@@ -10,6 +10,7 @@ import Link from "next/link";
 import PhotoGalery, { IPhoto } from "@/components/PhotoGalery";
 import Footer from "@/components/Footer";
 import { useEffect } from "react";
+import Adsense250x250 from "@/components/Adsense250x250";
 
 interface IRecipe {
     codigo: number;
@@ -58,7 +59,10 @@ export default function Categorias({ recipesWithPhotos, recipe, categories, cate
       />
       <Header />
       <div className="container">
-        <Sidebar categories={categories} />
+        <div>
+          <Sidebar categories={categories} />
+          <Adsense250x250 />
+        </div>
         <div className="content">
           <h1>
             {recipe.nome}
