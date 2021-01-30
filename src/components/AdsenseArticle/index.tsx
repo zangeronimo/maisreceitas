@@ -1,5 +1,4 @@
-import { Router } from "next/router";
-import React from "react";
+import React, { useEffect } from "react";
 
 declare global {
   interface Window {
@@ -9,20 +8,21 @@ declare global {
 
 export default function AdsenseArticle() {
 
-  Router.events.on('routeChangeComplete', () => {
+  useEffect(() => {
     try {
       (window.adsbygoogle = window.adsbygoogle || []).push({});
     } catch (err) {
       console.log(err);
     }
-  })
+  }, []);
 
   return (
     <ins
-      className="adsbygoogle adbanner-customize"
+      className="adsbygoogle"
       style={{
         display: "block"
       }}
+      data-ad-format="autorelaxed"
       data-ad-client="ca-pub-0338836461603030"
       data-ad-slot="7873909957"
     />
