@@ -43,6 +43,6 @@ export const Adsense = styled.div`
 
   @media (min-width: 1080px) {
     display: grid;
-    grid-template-columns: 1fr auto 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
   }
 `;
