@@ -9,7 +9,7 @@ import Stars from "@/components/Stars";
 import Link from "next/link";
 import PhotoGalery, { IPhoto } from "@/components/PhotoGalery";
 import Footer from "@/components/Footer";
-import Adsense250x250 from "@/components/Adsense250x250";
+import AdsenseRecipe from "@/components/AdsenseRecipe";
 
 interface IRecipe {
     codigo: number;
@@ -52,7 +52,7 @@ export default function Categorias({ recipesWithPhotos, recipe, categories, cate
       <div className="container">
         <div>
           <Sidebar categories={categories} />
-          <Adsense250x250 />
+          <AdsenseRecipe />
         </div>
         <div className="content">
           <h1>
