@@ -38,7 +38,7 @@ export const getStaticProps: GetStaticProps<INotFoundProps> = async () => {
   return {
     props: {
       categories,
-      revalidate: 3600,
+      revalidate: 30,
     }
   }
 }
