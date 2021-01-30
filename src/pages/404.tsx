@@ -7,7 +7,6 @@ import { GetStaticProps } from "next";
 import '@/styles/pages/NotFound';
 import { Container } from "@/styles/pages/NotFound";
 import { FaExclamationTriangle } from "react-icons/fa";
-import { useEffect } from "react";
 import Adsense250x250 from "@/components/Adsense250x250";
 
 interface INotFoundProps {
@@ -15,15 +14,6 @@ interface INotFoundProps {
 }
 
 export default function NotFound({ categories }: INotFoundProps) {
-
-  useEffect(() => {
-    try {
-      (window.adsbygoogle = window.adsbygoogle || []).push({});
-    } catch (err) {
-      console.log(err);
-    }
-  }, []);
-
   return  (
     <Container>
       <SEO title="Página não encontrada ou não disponível no momento" />

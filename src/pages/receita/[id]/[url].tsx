@@ -4,12 +4,11 @@ import Sidebar, { getSidebarCategories, ICategories } from "@/components/Sidebar
 import api, { apiURL } from "@/services/api";
 import { GetStaticPaths, GetStaticProps } from "next"
 import { useRouter } from 'next/router';
-import { Container, Galery, RecipeContent, RecipeCardList, RecipeCard, RecipeCardTitle, Adsense } from '@/styles/pages/Receita';
+import { Container, Galery, RecipeContent, RecipeCardList, RecipeCard, RecipeCardTitle } from '@/styles/pages/Receita';
 import Stars from "@/components/Stars";
 import Link from "next/link";
 import PhotoGalery, { IPhoto } from "@/components/PhotoGalery";
 import Footer from "@/components/Footer";
-import { useEffect } from "react";
 import Adsense250x250 from "@/components/Adsense250x250";
 
 interface IRecipe {
@@ -41,14 +40,6 @@ export default function Categorias({ recipesWithPhotos, recipe, categories, cate
   if (router.isFallback || !recipe) {
     return <p>Carregando...</p>
   }
-
-  useEffect(() => {
-    try {
-      (window.adsbygoogle = window.adsbygoogle || []).push({});
-    } catch (err) {
-      console.log(err);
-    }
-  }, []);
 
   return (
     <Container>

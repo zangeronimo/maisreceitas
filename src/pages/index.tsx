@@ -2,7 +2,7 @@ import SEO from '@/components/SEO';
 import Header from '@/components/Header';
 import Sidebar, { getSidebarCategories, ICategories } from '@/components/Sidebar';
 import { GetStaticProps } from 'next';
-import React, { useEffect } from 'react';
+import React from 'react';
 import Footer from '@/components/Footer';
 import { IRecipe } from './categoria/[id]/[url]';
 import api, { apiURL } from '@/services/api';
@@ -18,15 +18,6 @@ interface IHomeProps {
 }
 
 export default function Home({ categories, recipes }: IHomeProps) {
-
-  useEffect(() => {
-    try {
-      (window.adsbygoogle = window.adsbygoogle || []).push({});
-    } catch (err) {
-      console.log(err);
-    }
-  }, []);
-
   return (
     <Container>
       <SEO title="MaisReceitas - Os segredos da culinária ao seu alcance!" shouldExcludeTitleSuffix />
