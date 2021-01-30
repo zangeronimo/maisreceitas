@@ -59,7 +59,7 @@ export default class MyDocument extends Document {
           />
 
           {/* Google Adsense */}
-          <script data-ad-client="ca-pub-0338836461603030" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+          <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
         </Head>
         <body>
           <Main />

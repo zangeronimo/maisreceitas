@@ -8,11 +8,17 @@ export const Container = styled.div<IContainerProps>`
     display: none;
     ${props => props.showSidebar &&
     css`
-      display: block;
+      display: flex;
+      flex-direction: column;
     `};
 
     margin-right: 1.6rem;
     background: #3E3B47;
-    min-width: 210px;
-    max-width: 250px;
+    width: 250px;
+`;
+
+export const Adsense = styled.div`
+  margin-top: 16px;
+  width: 250px;
+  height: 250px;
 `;
