@@ -46,7 +46,6 @@ export default function Sidebar({ categories }: ISidebarProps) {
           ))}
         </SidebarItem>
       ))}
-      <AdsenseSidebar />
     </Container>
   )
 }
