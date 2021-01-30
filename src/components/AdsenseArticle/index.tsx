@@ -22,9 +22,10 @@ export default function AdsenseArticle() {
       style={{
         display: "block"
       }}
-      data-ad-format="autorelaxed"
       data-ad-client="ca-pub-0338836461603030"
       data-ad-slot="7873909957"
+      data-ad-format="auto"
+      data-full-width-responsive="true"
     />
   );
 };
