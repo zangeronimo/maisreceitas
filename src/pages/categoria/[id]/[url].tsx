@@ -108,6 +108,6 @@ export const getStaticProps: GetStaticProps<CategoriesProps> = async (context) =
       recipes,
       categories,
     },
-    revalidate: 3600,
+    revalidate: 30,
   }
 }
