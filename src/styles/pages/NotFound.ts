@@ -30,7 +30,9 @@ export const Container = styled.div`
 `;
 
 export const Adsense = styled.div`
-  margin: 0 3.2rem;
+  margin: 3.2rem 0;
+  width: 300px;
+  height: 250px;
   flex: 1;
   display: flex;
   flex-direction: column;
