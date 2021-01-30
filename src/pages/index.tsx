@@ -10,7 +10,7 @@ import Link from 'next/link';
 import Stars from '@/components/Stars';
 
 import { Container, RecipeCardList, RecipeCard, RecipeCardTitle } from '@/styles/pages/Home';
-import Adsense250x250 from '@/components/Adsense250x250';
+import FbPage from '@/components/FbPage';
 
 interface IHomeProps {
   categories?: ICategories[];
@@ -40,6 +40,14 @@ export default function Home({ categories, recipes }: IHomeProps) {
               )
             })}
           </RecipeCardList>
+          <FbPage
+            width="550"
+            height="350"
+            hideCover={false}
+            showFacepile={false}
+            hideCTA={false}
+            smallHeader={false}
+          />
         </div>
       </div>
       <Footer />
