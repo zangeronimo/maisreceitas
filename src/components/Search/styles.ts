@@ -10,12 +10,11 @@ export const Container = styled.div`
   }
 
   input {
-    font-size: 2.4rem;
+    font-size: 2rem;
     margin-left: 8px;
-    border: 0;
     height: 48px;
     border-radius: 5px 0 0 5px;
-    padding: 16px;
+    padding: 1.6rem 0.8rem;
     background: #232129;
     color: #666360;
     border: 1px solid #232129;

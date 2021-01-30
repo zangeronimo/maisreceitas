@@ -25,7 +25,7 @@ export const Container = styled.div`
 
     p {
       line-height: 2.4rem;
-      margin-top: 2.4rem;
+      margin: 2.4rem;
     }
 `;
 
