@@ -40,6 +40,14 @@ export default function Categorias({ recipesWithPhotos, recipe, categories, cate
     return <p>Carregando...</p>
   }
 
+  useEffect(() => {
+    try {
+      (window.adsbygoogle = window.adsbygoogle || []).push({});
+    } catch (err) {
+      console.log(err);
+    }
+  }, []);
+
   return (
     <Container>
       <SEO

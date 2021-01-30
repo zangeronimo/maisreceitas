@@ -9,6 +9,7 @@ import Stars from "@/components/Stars";
 import RecipeList from "@/components/RecipeList";
 import Link from "next/link";
 import Footer from "@/components/Footer";
+import { useEffect } from "react";
 
 export interface IRecipe {
     codigo: number;
@@ -32,6 +33,14 @@ export default function Categorias({ recipesWithPhotos, recipes, categories, cat
   if (router.isFallback || !recipes) {
     return <p>Carregando...</p>
   }
+
+  useEffect(() => {
+    try {
+      (window.adsbygoogle = window.adsbygoogle || []).push({});
+    } catch (err) {
+      console.log(err);
+    }
+  }, []);
 
   return (
     <Container>
