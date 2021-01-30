@@ -11,7 +11,7 @@ interface IGenerateSiteMapProps {
 export default function GenerateSiteMap({ url }: IGenerateSiteMapProps) {
   return (
     <div>
-      <SEO title="MaisReceitas - Os segredos da culinária ao seu alcance!" shouldExcludeTitleSuffix shouldIndexPage={false} />
+      <SEO title="MaisReceitas - Os segredos da culinária ao seu alcance!" url="" shouldExcludeTitleSuffix shouldIndexPage={false} />
       <p>Gerando sitemap.xml</p>
       <p>{url.length} gerados...</p>
     </div>

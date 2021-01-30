@@ -22,12 +22,13 @@ export interface IRecipe {
 
 interface CategoriesProps {
     categoryName: string;
+    fullURL: string;
     recipesWithPhotos: IRecipe[];
     recipes: IRecipe[];
     categories: ICategories[]
 }
 
-export default function Categorias({ recipesWithPhotos, recipes, categories, categoryName }: CategoriesProps) {
+export default function Categorias({ recipesWithPhotos, recipes, categories, categoryName, fullURL }: CategoriesProps) {
   const router = useRouter();
 
   if (router.isFallback || !recipes) {
@@ -38,6 +39,7 @@ export default function Categorias({ recipesWithPhotos, recipes, categories, cat
     <Container>
       <SEO
         title={`Receitas de ${categoryName}`}
+        url={fullURL}
         description={`Curta e aproveite as mais deliciosas receitas em ${categoryName}, isso e muito mais você encontra aqui, confira.`}
       />
       <Header />
@@ -95,6 +97,7 @@ export const getStaticProps: GetStaticProps<CategoriesProps> = async (context) =
   return {
     props: {
       categoryName: String(b),
+      fullURL: `busca/${b}`,
       recipesWithPhotos,
       recipes,
       categories,

@@ -20,7 +20,7 @@ interface IHomeProps {
 export default function Home({ categories, recipes }: IHomeProps) {
   return (
     <Container>
-      <SEO title="MaisReceitas - Os segredos da culinária ao seu alcance!" shouldExcludeTitleSuffix />
+      <SEO title="MaisReceitas - Os segredos da culinária ao seu alcance!" shouldExcludeTitleSuffix url="" />
       <Header />
       <div className="container">
         <Sidebar categories={categories} />
