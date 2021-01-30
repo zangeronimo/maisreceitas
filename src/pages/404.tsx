@@ -4,10 +4,9 @@ import SEO from "@/components/SEO";
 import Sidebar, { getSidebarCategories, ICategories } from "@/components/Sidebar";
 import { GetStaticProps } from "next";
 
-import '@/styles/pages/NotFound';
-import { Container } from "@/styles/pages/NotFound";
+import { Container, Adsense } from "@/styles/pages/NotFound";
 import { FaExclamationTriangle } from "react-icons/fa";
-import Adsense250x250 from "@/components/Adsense250x250";
+import Adsense300x250 from "@/components/Adsense300x250";
 
 interface INotFoundProps {
   categories?: ICategories[];
@@ -23,9 +22,15 @@ export default function NotFound({ categories }: INotFoundProps) {
         <div>
           <h1><FaExclamationTriangle /> Página não encontrada ou não disponível no momento</h1>
           <h2>Atualizamos nosso site</h2>
-          <div>
+          <p>
             Realizamos uma atualização completa em nosso site para melhorar sua experiência, lamentamos o transtorno, realize uma busca para encontrar o que deseja.
-          </div>
+          </p>
+
+          <Adsense>
+            <Adsense300x250 />
+            <Adsense300x250 />
+            <Adsense300x250 />
+          </Adsense>
         </div>
       </div>
       <Footer />
