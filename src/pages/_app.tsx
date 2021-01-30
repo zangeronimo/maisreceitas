@@ -2,8 +2,14 @@ import Hooks from '@/hooks';
 import GlobalStyles from '@/styles/GlobalStyles';
 import { Router } from 'next/router';
 import * as gtag from '../lib/gtag'
+import * as ads from '../lib/ads';
 
-Router.events.on('routeChangeComplete', (url) => gtag.pageview(url))
+const routeChanged = (url: any) => {
+  gtag.pageview(url);
+  ads.load();
+}
+
+Router.events.on('routeChangeComplete', (url) => routeChanged(url));
 
 function MyApp({ Component, pageProps }) {
   return (
