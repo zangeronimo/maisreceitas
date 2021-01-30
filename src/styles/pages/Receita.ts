@@ -44,6 +44,11 @@ export const Galery = styled.div`
   margin: 16px 0;
 `;
 
+export const Adsense = styled.div`
+  margin: 16px 0;
+  max-width: 300px;
+`;
+
 export const RecipeCardList = styled.div`
   margin-top: 0.8rem;
 
