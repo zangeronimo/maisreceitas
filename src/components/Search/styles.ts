@@ -34,7 +34,6 @@ export const Container = styled.div`
       color: #999591;
     }
   }
-
 `;
 
 export const Button = styled.button`
