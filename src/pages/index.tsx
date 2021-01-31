@@ -9,8 +9,9 @@ import api, { apiURL } from '@/services/api';
 import Link from 'next/link';
 import Stars from '@/components/Stars';
 
-import { Container, RecipeCardList, RecipeCard, RecipeCardTitle } from '@/styles/pages/Home';
+import { Container, RecipeCardList, RecipeCard, RecipeCardTitle, HomeFooter } from '@/styles/pages/Home';
 import FbPage from '@/components/FbPage';
+import Adsense300x250 from '@/components/Adsense300x250';
 
 interface IHomeProps {
   categories?: ICategories[];
@@ -40,14 +41,19 @@ export default function Home({ categories, recipes }: IHomeProps) {
               )
             })}
           </RecipeCardList>
-          <FbPage
-            width="550"
-            height="350"
-            hideCover={false}
-            showFacepile={false}
-            hideCTA={false}
-            smallHeader={false}
-          />
+
+          <HomeFooter>
+            <FbPage
+              width="300"
+              height="130"
+              hideCover={false}
+              showFacepile={false}
+              hideCTA={false}
+              smallHeader={false}
+            />
+            <Adsense300x250 />
+            <Adsense300x250 />
+          </HomeFooter>
         </div>
       </div>
       <Footer />

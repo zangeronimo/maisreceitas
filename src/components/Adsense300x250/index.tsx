@@ -1,7 +1,7 @@
 import { Adsense } from '@ctrl/react-adsense';
 import { Container } from './styles';
 
-export default function Adsense250x250() {
+export default function Adsense300x250() {
   return (
     <Container>
       <Adsense
