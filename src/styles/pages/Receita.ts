@@ -4,7 +4,7 @@ export const Container = styled.div`
   h1 {
     display: flex;
     flex-direction: column;
-    margin-top: 2.4rem;
+    margin: 2.4rem;
     font-size: 2.4rem;
     color: #666360;
 
@@ -15,7 +15,7 @@ export const Container = styled.div`
 
   h2 {
     font-size: 2.4rem;
-    margin-top: 16px;
+    margin: 16px;
     color: #999591;
   };
 
@@ -41,14 +41,14 @@ export const RecipeContent = styled.article`
 `;
 
 export const Galery = styled.div`
-  float: right;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   margin: 16px 0;
-`;
 
-export const Adsense = styled.div`
-  float: right;
-  margin: 16px 0;
-  max-width: 300px;
+  @media (min-width: 600px) {
+    float: right;
+  }
 `;
 
 export const RecipeCardList = styled.div`
