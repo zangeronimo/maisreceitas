@@ -9,11 +9,11 @@ export const Container = styled.div`
 export const Photo = styled.img`
   width: 32rem;
   border-radius: 3%;
-  margin-left: 1.6rem;
   margin-bottom: 1.6rem;
 
   @media (min-width: 500px)  {
     width: 25rem;
+    margin-left: 1.6rem;
   }
 
   @media (min-width: 700px)  {
