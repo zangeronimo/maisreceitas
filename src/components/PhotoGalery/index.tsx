@@ -1,5 +1,6 @@
 import { apiURL } from '@/services/api';
 import { useEffect, useState } from 'react';
+import Adsense300x100 from '../Adsense300x100';
 import { Container, Photo, Thumbs, Thumb } from './styles';
 
 export interface IPhoto {
@@ -25,6 +26,7 @@ export default function PhotoGalery({ galery }: IPhotoGalery) {
 
   return (
     <Container>
+      <Adsense300x100 />
       <Photo src={`${apiURL}/${currentPhoto.url}`} alt={currentPhoto.nome} />
       <Thumbs>
         {galery.filter(p => p.codigo !== currentPhoto.codigo).map(photo => (
