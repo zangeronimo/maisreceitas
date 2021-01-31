@@ -9,7 +9,7 @@ import Stars from "@/components/Stars";
 import Link from "next/link";
 import PhotoGalery, { IPhoto } from "@/components/PhotoGalery";
 import Footer from "@/components/Footer";
-import Adsense250x250 from "@/components/Adsense250x250";
+import Adsense300x250 from "@/components/Adsense300x250";
 
 interface IRecipe {
     codigo: number;
@@ -61,7 +61,10 @@ export default function Categorias({ recipesWithPhotos, recipe, categories, cate
           </h1>
 
 
-          {recipe.fotos.length > 0 && <Galery><PhotoGalery galery={recipe.fotos} /></Galery>}
+          <Galery>
+            {recipe.fotos.length > 0
+            ? <PhotoGalery galery={recipe.fotos} />
+            : <Adsense300x250 />}</Galery>
 
           <RecipeContent  dangerouslySetInnerHTML={{ __html: recipe.html }} />
 
