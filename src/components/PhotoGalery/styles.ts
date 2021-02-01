@@ -7,7 +7,7 @@ export const Container = styled.div`
 `;
 
 export const Photo = styled.img`
-  width: 32rem;
+  width: 100%;
   border-radius: 3%;
   margin-bottom: 1.6rem;
 
