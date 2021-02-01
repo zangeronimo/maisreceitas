@@ -23,10 +23,6 @@ export const Photo = styled.img`
   @media (min-width: 800px)  {
     width: 40rem;
   }
-
-  @media (min-width: 900px)  {
-    width: 50rem;
-  }
 `;
 
 export const Thumbs = styled.div`
