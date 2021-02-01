@@ -7,7 +7,7 @@ export const Container = styled.div`
 `;
 
 export const Photo = styled.img`
-  width: 32rem;
+  width: 100%;
   border-radius: 3%;
   margin-bottom: 1.6rem;
 
@@ -22,10 +22,6 @@ export const Photo = styled.img`
 
   @media (min-width: 800px)  {
     width: 40rem;
-  }
-
-  @media (min-width: 900px)  {
-    width: 50rem;
   }
 `;
 
