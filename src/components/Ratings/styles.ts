@@ -9,7 +9,7 @@ export const AddContainer = styled.div`
   padding: 1rem;
 
   h2 {
-    color: #ff9000;
+    color: ${({ theme }) => theme.primary};
     border-bottom: 1px solid;
     margin: 0;
     padding: 0;
@@ -42,17 +42,16 @@ export const AddContainer = styled.div`
     width: 80px;
     margin-top: 1rem;
   }
-
 `;
 
 export const Waiting = styled.div`
-  border: 1px solid #ff9000;
+  border: 1px solid ${({ theme }) => theme.primary};
   padding: 1rem;
   margin-top: 1rem;
   color: #555555;
 
   h3 {
-    color: #ff9000;
+    color: ${({ theme }) => theme.primary};
     margin: 0;
     padding: 0;
   }

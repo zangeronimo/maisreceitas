@@ -1,4 +1,4 @@
-import styled, { css } from 'styled-components';
+import styled, { css } from "styled-components";
 
 interface LineProps {
   detach?: boolean;
@@ -11,7 +11,7 @@ export const Container = styled.div`
 export const SubTitle = styled.h2`
   font-size: 2rem;
   border-bottom: 1px solid;
-  color: #ff9000;
+  color: ${({ theme }) => theme.primary};
 `;
 
 export const Table = styled.table`
@@ -39,16 +39,16 @@ export const Line = styled.tr<LineProps>`
   transition: background-color 0.2s;
   cursor: pointer;
 
-  ${props =>
+  ${(props) =>
     props.detach &&
     css`
       background: #eaeaea;
     `};
 
   &:hover {
-    background: #ff9000;
+    background: ${({ theme }) => theme.primary};
     a {
-      color: #555;
+      color: ${({ theme }) => theme.secondaryLight};
     }
   }
 `;

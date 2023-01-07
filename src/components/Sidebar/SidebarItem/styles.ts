@@ -1,4 +1,4 @@
-import styled, { css } from 'styled-components';
+import styled, { css } from "styled-components";
 
 interface ContainerProps {
   isActive?: boolean;
@@ -20,10 +20,10 @@ export const Container = styled.div<ContainerProps>`
   transition: color 0.2s;
 
   &:hover {
-    color: #FF9000;
+    color: ${({ theme }) => theme.primary};
   }
 
-  ${props =>
+  ${(props) =>
     props.isActive &&
     css`
       background: #209e91;
@@ -56,16 +56,15 @@ export const Subitems = styled.div<SubitemsProps>`
     padding: 4px 0px;
     text-decoration: none;
     padding-left: 24px;
-    transition: background-color 0.1s;
+    transition: all 0.2s;
 
     & :hover {
-      background: #FF9000;
-      color: #232129;
+      background: ${({ theme }) => theme.primary};
+      color: ${({ theme }) => theme.secondaryLight};
     }
   }
 
-
-  ${props =>
+  ${(props) =>
     props.showSubitems &&
     css`
       display: flex;

@@ -1,34 +1,40 @@
-import { IRecipe } from "@/services/recipes"
-import Link from "next/link"
-import React from "react"
+import { IRecipe } from "@/services/recipes";
+import Link from "next/link";
+import React from "react";
 import Stars from "../Stars";
 
-import { RecipeCard, Container, RecipeCardTitle } from './styles';
+import { RecipeCard, Container, RecipeCardTitle } from "./styles";
 
 interface IRecipeCardListProps {
   label: string;
   recipes: IRecipe[];
 }
 
-export default function RecipeCardList({ recipes, label }: IRecipeCardListProps) {
+export default function RecipeCardList({
+  recipes,
+  label,
+}: IRecipeCardListProps) {
   return (
     <>
       <h3>{label}</h3>
       <Container>
-        {recipes.map(recipe => {
+        {recipes.map((recipe) => {
           return (
             <Link key={recipe.id} href={`/receita/${recipe.slug}`}>
               <a title={`Receita de ${recipe.name}`}>
                 <RecipeCard>
-                  <img src={recipe.images[0].url} alt={recipe.name} />
+                  <img
+                    src={recipe.images[0].url}
+                    alt={`Foto da receita de recipe.name`}
+                  />
                   <RecipeCardTitle>{recipe.name}</RecipeCardTitle>
                   <Stars rate={recipe.rate} />
                 </RecipeCard>
               </a>
             </Link>
-          )
+          );
         })}
       </Container>
     </>
-  )
+  );
 }

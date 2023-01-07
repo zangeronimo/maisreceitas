@@ -19,14 +19,15 @@ export const RecipeCard = styled.div`
   height: 100%;
   flex-direction: column;
   border: 1px solid #ccc;
-  background: #eaeaea;
+  background: ${({ theme }) => theme.primaryLight};
+  color: ${({ theme }) => theme.secondaryLight};
+
   border-radius: 6px;
   overflow: hidden;
-  transition: background-color 0.2s;
+  transition: all 0.2s;
 
   &:hover {
-    background: #ccc;
-    border-color: #ddd;
+    background: ${({ theme }) => theme.primary};
   }
 
   img {
@@ -35,13 +36,9 @@ export const RecipeCard = styled.div`
 `;
 
 export const RecipeCardTitle = styled.div`
-  color: #999591;
+  color: currentColor;
   font-size: 1.6rem;
   line-height: 1.4;
   margin: 8px;
   transition: color 0.2s;
-
-  &:hover {
-    color: #f4ede8;
-  }
 `;

@@ -32,9 +32,9 @@ export default function Home({ levels, lastRecipes, imgRecipes }: IHomeProps) {
       <div className="container">
         <Sidebar categories={levels} />
         <div className="content">
-          <RecipeList label="Novas Receitas" recipes={lastRecipes.data} />
+          <RecipeList label="Novidades" recipes={lastRecipes.data} />
 
-          <RecipeCardList label="Receitas em Destaques" recipes={imgRecipes} />
+          <RecipeCardList label="Receitas em Destaque" recipes={imgRecipes} />
 
           <Footer />
         </div>
@@ -50,10 +50,10 @@ export const getServerSideProps: GetServerSideProps<IHomeProps> = async () => {
     params: {
       order: { field: "updatedAt", order: "DESC" },
       active: 1,
-      perPage: 15,
+      perPage: 10,
     },
   });
-  const imgRecipes = await getImgRecipes(6);
+  const imgRecipes = await getImgRecipes(12);
 
   return {
     props: {

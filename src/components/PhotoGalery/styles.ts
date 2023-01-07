@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const Container = styled.div`
   display: flex;
@@ -9,18 +9,18 @@ export const Container = styled.div`
 export const Photo = styled.img`
   width: 100%;
   border-radius: 10px;
-  border: 5px solid #ff9000;
+  border: 5px solid ${({ theme }) => theme.primary};
 
-  @media (min-width: 500px)  {
+  @media (min-width: 500px) {
     width: 25rem;
     margin-left: 1.6rem;
   }
 
-  @media (min-width: 700px)  {
+  @media (min-width: 700px) {
     width: 30rem;
   }
 
-  @media (min-width: 800px)  {
+  @media (min-width: 800px) {
     width: 40rem;
   }
 `;
@@ -33,7 +33,7 @@ export const Thumbs = styled.div`
 export const Thumb = styled.img`
   width: 10rem;
   margin: 8px 0;
-  border-radius: 0 10% 0 10% ;
+  border-radius: 0 10% 0 10%;
   cursor: pointer;
 
   & + img {

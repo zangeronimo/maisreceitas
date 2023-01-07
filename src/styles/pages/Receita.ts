@@ -1,9 +1,8 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const Container = styled.div`
-
   strong {
-    color: #FF9000;
+    color: ${({ theme }) => theme.primary};
     border-bottom: 1px solid;
   }
 
@@ -11,7 +10,7 @@ export const Container = styled.div`
     display: flex;
     flex-direction: column;
     font-size: 2.4rem;
-    color: #FF9000;
+    color: ${({ theme }) => theme.primary};
 
     margin-bottom: 2rem;
 
@@ -24,7 +23,7 @@ export const Container = styled.div`
     font-size: 2.4rem;
     margin: 16px;
     color: #999591;
-  };
+  }
 
   a {
     text-decoration: none;
@@ -76,12 +75,12 @@ export const RecipeCard = styled.div`
   padding: 16px;
   border: 1px solid #666360;
   border-radius: 10%;
-  background: #3E3B47;
+  background: #3e3b47;
   transition: background-color 0.2s;
 
-  &:hover{
-    background: #28262E;
-    border-color: #3E3B47;
+  &:hover {
+    background: #28262e;
+    border-color: #3e3b47;
   }
 
   img {
@@ -97,6 +96,6 @@ export const RecipeCardTitle = styled.div`
   transition: color 0.2s;
 
   &:hover {
-    color: #F4EDE8;
+    color: #f4ede8;
   }
 `;

@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const Container = styled.div`
   flex: 1;
@@ -8,11 +8,10 @@ export const Container = styled.div`
   }
 
   h3 {
-    color: #FF9000;
+    color: ${({ theme }) => theme.primary};
     border-bottom: 1px solid;
     margin-bottom: 1rem;
   }
-
 `;
 
 export const LastRecipes = styled.div`
