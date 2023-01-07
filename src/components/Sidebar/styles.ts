@@ -27,12 +27,18 @@ export const Container = styled.div<IContainerProps>`
     min-width: 25rem;
     max-width: 25rem;
     padding: 1rem 0;
+    height: auto;
   }
 `;
 
 export const Items = styled.div`
   overflow-y: scroll;
   height: 80%;
+
+  @media (min-width: ${({ theme }) => theme.queryes.smallDevices}) {
+    overflow-y: hidden;
+    height: none;
+  }
 `;
 
 export const Title = styled.div`
