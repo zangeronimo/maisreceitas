@@ -1,14 +1,9 @@
-import { Aside } from "@/components/Aside";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
-import RecipeCardList from "@/components/RecipeCardList";
-import RecipeList from "@/components/RecipeList";
 import SEO from "@/components/SEO";
-import Sidebar from "@/components/Sidebar";
-import { getSidebarLevels, ILevel } from "@/services/levels";
 
 import { Container } from "@/styles/pages/NotFound";
-import { GetServerSideProps } from "next";
+import { useRouter } from "next/router";
 import { FaExclamationTriangle } from "react-icons/fa";
 
 export default function NotFound() {
