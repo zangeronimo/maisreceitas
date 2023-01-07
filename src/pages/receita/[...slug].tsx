@@ -6,12 +6,8 @@ export default function Recipe() {
   const slug = router.asPath.split("/").pop();
 
   useEffect(() => {
-    if (!slug.includes(".htm")) {
-      if (slug != "") router.push(`/busca/${slug.replaceAll("-", "%20")}`);
-      else router.push("/404");
-    } else {
-      router.push(`/receita/${slug.replace(".htm", "")}`);
-    }
+    if (slug) router.push(`/busca/${slug.replaceAll("-", "%20")}`);
+    else router.push("/404");
   }, [slug]);
 
   return <p>Carregando...</p>;
