@@ -5,18 +5,19 @@ export const Container = styled.div``;
 export const AddContainer = styled.div`
   display: flex;
   flex-direction: column;
-  background-color: #eaeaea;
+  background-color: ${({ theme }) => theme.primary};
+  border-radius: 6px;
   padding: 1rem;
 
   h2 {
-    color: ${({ theme }) => theme.primary};
+    color: ${({ theme }) => theme.secondaryLight};
     border-bottom: 1px solid;
     margin: 0;
     padding: 0;
   }
 
   label {
-    color: #555;
+    color: ${({ theme }) => theme.secondaryLight};
   }
 
   label {
@@ -24,23 +25,29 @@ export const AddContainer = styled.div`
   }
 
   select {
-    width: 100px;
-    font-size: 1.5rem;
+    max-width: 200px;
+    font-size: 2.5rem;
   }
 
   input {
-    width: 315px;
-    font-size: 1.5rem;
+    max-width: 415px;
+    font-size: 2.5rem;
   }
   textarea {
-    width: 315px;
+    width: 100%;
     height: 80px;
-    font-size: 1.5rem;
+    font-size: 2.5rem;
   }
 
   button {
-    width: 80px;
+    width: 180px;
+    font-size: 3rem;
     margin-top: 1rem;
+    color: ${({ theme }) => theme.primaryDark};
+    background-color: ${({ theme }) => theme.secondaryLight};
+    border: none;
+    border-radius: 4px;
+    padding: 1rem 0;
   }
 `;
 
