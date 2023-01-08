@@ -37,7 +37,7 @@ export default createGlobalStyle`
     }
 
     body {
-      max-width: 93.75em;
+      max-width: 84.35em;
       margin: 0 auto;
       background-color: ${theme.secondary};
       color: ${theme.black};
